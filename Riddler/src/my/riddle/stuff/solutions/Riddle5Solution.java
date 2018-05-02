@@ -19,9 +19,9 @@ public class Riddle5Solution {
  * 
  * 
  * 
- *	Modify inside the while loop to create the new outpu
+ *	Modify inside the while loop to create the new output
  *
- *	Restrictions: The existing if/else structure, no additional uses of system.out, and no calling print() from main
+ *	Restrictions: The existing if/else structure, no additional uses of system.out, and no calling print() from main, no additional loops
  */		
 
 
@@ -29,7 +29,6 @@ public class Riddle5Solution {
         System.out.println("Riddle 5 Solution:");
         Helper_Class helper = null;
         while(null == helper || helper.isTest()) {
-        	//your code here
         	if(null == helper || helper.getNum()%2 == 0) {
         		helper = new Helper_1_Class();
         	} else {
@@ -42,14 +41,15 @@ public class Riddle5Solution {
 	
 	public abstract static class Helper_Class {
 		
-		boolean test = true;
-		static int num = 0;
+		private boolean test = true;
+		private static int num = 0;
+		private String s = "X";
 
-		private void print(int lineNum, String s) {
+		private void print() {
 	      	for(int j = 0; j < 11; j++) {
 	          	if(10 == j) {
 	          		System.out.println("");
-	          	} else if(lineNum == j || lineNum == (9-j)) {
+	          	} else if(num == j || num == (9-j)) {
 	          		System.out.print(s);
 	          	} else {
 	          		System.out.print(" ");
@@ -60,38 +60,47 @@ public class Riddle5Solution {
 		public boolean isTest() {
 			return test;
 		}
-		
+		public void setTest(boolean test) {
+			this.test = test;
+		}
 		public int getNum() {
 			return num;
+		}
+		public void setNum(int num) {
+			this.num = num;
+		}
+		public String getS() {
+			return s;
+		}
+		public void setS(String s) {
+			this.s = s;
 		}
 	}
 	
 	public static class Helper_1_Class extends Helper_Class {
-		
-		final String s = "A";
-		
+
 		public Helper_1_Class() {
 			super();
-			if(10 <= num) {
-				test = false;
+			setS("A");
+			if(10 <= getNum()) {
+				setTest(false);
 			} else {
-				super.print(num, s);
-				num++;
+				super.print();
+				setNum(getNum() + 1);
 			}
 		}
 	}
 	
-public static class Helper_2_Class extends Helper_Class {
-		
-		final String s = "B";
-		
+	public static class Helper_2_Class extends Helper_Class {
+
 		public Helper_2_Class() {
 			super();
-			if(10 <= num) {
-				test = false;
+			setS("B");
+			if(10 <= getNum()) {
+				setTest(false);
 			} else {
-				super.print(num, s);
-				num++;
+				super.print();
+				setNum(getNum() + 1);
 			}
 		}
 	}

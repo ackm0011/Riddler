@@ -19,14 +19,14 @@ public class Riddle5 {
  * 
  * 
  * 
- *	Modify inside the while loop to create the new outpu
+ *	Modify inside the while loop to create the new output
  *
- *	Restrictions: The existing if/else structure, no additional uses of system.out, and no calling print() from main
+ *	Restrictions: The existing if/else structure, no additional uses of system.out, and no calling print() from main, no additional loops
  */		
 
 
 	public static void main(String[] args) {
-        System.out.println("Riddle 5 Solution:");
+        System.out.println("Riddle 5:");
         Helper_Class helper = null;
         while(null == helper || helper.isTest()) {
         	if(//your code here) {
@@ -38,15 +38,16 @@ public class Riddle5 {
     }
 	
 	public abstract static class Helper_Class {
-		
-		boolean test = true;
-		static int num = 0;
 
-		private void print(int lineNum, String s) {
+		private boolean test = true;
+		private static int num = 0;
+		private String s = "X";
+
+		private void print() {
 	      	for(int j = 0; j < 11; j++) {
 	          	if(10 == j) {
 	          		System.out.println("");
-	          	} else if(lineNum == j || lineNum == (9-j)) {
+	          	} else if(num == j || num == (9-j)) {
 	          		System.out.print(s);
 	          	} else {
 	          		System.out.print(" ");
@@ -57,14 +58,25 @@ public class Riddle5 {
 		public boolean isTest() {
 			return test;
 		}
-		
+		public void setTest(boolean test) {
+			this.test = test;
+		}
 		public int getNum() {
 			return num;
+		}
+		public void setNum(int num) {
+			this.num = num;
+		}
+		public String getS() {
+			return s;
+		}
+		public void setS(String s) {
+			this.s = s;
 		}
 	}
 	
 
-	
+	//your code here
 
 	
 }

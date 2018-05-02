@@ -8,7 +8,6 @@ public class Main {
         System.out.println("Each class's goal is to create the following output");
         System.out.println("while following the rules and initial class provided");
         System.out.println("");
-//        System.out.println("XXXXXXXXXX");
         System.out.println("X        X");
         System.out.println(" X      X ");
         System.out.println("  X    X  ");
@@ -19,7 +18,6 @@ public class Main {
         System.out.println("  X    X  ");
         System.out.println(" X      X ");
         System.out.println("X        X");
-//        System.out.println("XXXXXXXXXX");
         
     }
 
